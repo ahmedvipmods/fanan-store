@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>متجر الفنان - الكاشير الشامل</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
@@ -16,6 +16,65 @@
     flex-direction: row;
     gap: 15px;
     z-index: 4000;
+}
+/* حاوية الأزرار في منتصف أسفل الشاشة */
+.social-contact {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap; /* للسماح للأزرار بالنزول لسطر جديد إذا كانت الشاشة صغيرة جداً */
+    justify-content: center;
+    gap: 10px;
+    z-index: 4000;
+    width: 95%; /* لضمان عدم الخروج عن حواف الشاشة */
+}
+
+.social-btn {
+    padding: 12px 18px; /* تكبير مساحة الضغط */
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; /* حجم خط واضح */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: pulse-animation 2s infinite;
+    transition: 0.3s;
+    min-width: 100px; /* ضمان وجود عرض أدنى للزر ليظهر النص */
+    justify-content: center;
+}
+
+/* الألوان */
+.fb { background: #1877f2; }
+.wa { background: #25d366; }
+.tg { background: #0088cc; }
+.tt { background: #010101; }
+
+/* تأثير النبض */
+@keyframes pulse-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* التجاوب مع الهواتف الصغيرة جداً */
+@media (max-width: 480px) {
+    .social-btn {
+        padding: 10px 12px;
+        font-size: 12px;
+        min-width: 80px;
+    }
+    .container {
+        padding: 10px;
+        margin-top: 80px; /* مسافة لزر الثيم */
+    }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* عرض منتجين بجانب بعضهما دائماً */
+    }
 }
 
 .social-btn {
