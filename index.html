@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://cloudflare.com">
 
     <style>
+              /* هذا الكود سيجعل كل نصوص الصفحة عريضة */
+        body {
+            font-weight: bold;
+        }
         /* شريط الأخبار الفخم */
 .news-ticker-container {
     width: 100%;
@@ -242,24 +246,24 @@
 
             <div class="category-tabs">
                 <button class="tab-btn active" onclick="showCategory('all', this)">الكل</button>
-                <button class="tab-btn" onclick="showCategory('paints', this)">الألوان</button>
-                <button class="tab-btn" onclick="showCategory('brushes', this)">الفرش</button>
+                <button class="tab-btn" onclick="showCategory('home', this)">منزل</button>
+                <button class="tab-btn" onclick="showCategory('cars', this)">سيارات</button>
                 <button class="tab-btn" onclick="showCategory('tools', this)">أدوات</button>
             </div>
             
             <div class="product-grid">
-                <div class="product-card" data-cat="paints" onclick="addItem('ألوان زيتية', 250)">🖼️ زيتية<br><b>250 ج.م</b></div>
-                <div class="product-card" data-cat="paints" onclick="addItem('ألوان أكريليك', 180)">🎨 أكريليك<br><b>180 ج.م</b></div>
-                <div class="product-card" data-cat="paints" onclick="addItem('ألوان زيتية', 250)">🖼️ زيتية<br><b>250 ج.م</b></div>
-                <div class="product-card" data-cat="paints" onclick="addItem('ألوان أكريليك', 180)">🎨 أكريليك<br><b>180 ج.م</b></div>
-                <div class="product-card" data-cat="paints" onclick="addItem('ألوان زيتية', 250)">🖼️ زيتية<br><b>250 ج.م</b></div>
-                <div class="product-card" data-cat="paints" onclick="addItem('ألوان أكريليك', 180)">🎨 أكريليك<br><b>180 ج.م</b></div>
-                <div class="product-card" data-cat="brushes" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
-                <div class="product-card" data-cat="brushes" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
-                <div class="product-card" data-cat="brushes" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
-                <div class="product-card" data-cat="brushes" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
-                <div class="product-card" data-cat="brushes" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
-                <div class="product-card" data-cat="brushes" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
+                <div class="product-card" data-cat="home" onclick="addItem('ألوان زيتية', 250)">🖼️ زيتية<br><b>250 ج.م</b></div>
+                <div class="product-card" data-cat="home" onclick="addItem('ألوان أكريليك', 180)">🎨 أكريليك<br><b>180 ج.م</b></div>
+                <div class="product-card" data-cat="home" onclick="addItem('ألوان زيتية', 250)">🖼️ زيتية<br><b>250 ج.م</b></div>
+                <div class="product-card" data-cat="home" onclick="addItem('ألوان أكريليك', 180)">🎨 أكريليك<br><b>180 ج.م</b></div>
+                <div class="product-card" data-cat="home" onclick="addItem('ألوان زيتية', 250)">🖼️ زيتية<br><b>250 ج.م</b></div>
+                <div class="product-card" data-cat="home" onclick="addItem('ألوان أكريليك', 180)">🎨 أكريليك<br><b>180 ج.م</b></div>
+                <div class="product-card" data-cat="cars" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
+                <div class="product-card" data-cat="cars" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
+                <div class="product-card" data-cat="cars" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
+                <div class="product-card" data-cat="cars" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
+                <div class="product-card" data-cat="cars" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
+                <div class="product-card" data-cat="cars" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
                 <div class="product-card" data-cat="tools" onclick="addItem('حامل خشبي', 450)">🏗️ حامل<br><b>450 ج.م</b></div>
                 <div class="product-card" data-cat="tools" onclick="addItem('حامل خشبي', 450)">🏗️ حامل<br><b>450 ج.م</b></div>
                 <div class="product-card" data-cat="tools" onclick="addItem('حامل خشبي', 450)">🏗️ حامل<br><b>450 ج.م</b></div>
