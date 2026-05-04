@@ -7,6 +7,74 @@
     <title>مستر كيان- الكاشير الشامل</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
+        /* شريط الأخبار الفخم */
+.news-ticker-container {
+    width: 100%;
+    background: linear-gradient(90deg, var(--primary), #6366f1);
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-ticker-container::before {
+    content: "📢 جديدنا:";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: var(--accent);
+    color: white;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    font-size: 14px;
+}
+
+.ticker-wrapper {
+    display: flex;
+    white-space: nowrap;
+    padding-right: 100px; /* مسافة لعنوان جديدنا */
+}
+
+.ticker-text {
+    display: inline-block;
+    padding-left: 100%; /* البداية من أقصى اليسار */
+    animation: ticker-move 20s linear infinite;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.ticker-text span {
+    margin-right: 50px;
+    display: inline-block;
+}
+
+/* حركة النص نحو اليمين */
+@keyframes ticker-move {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* توقف الحركة عند مرور الماوس */
+.news-ticker-container:hover .ticker-text {
+    animation-play-state: paused;
+}
+
+/* التجاوب مع الموبايل */
+@media (max-width: 600px) {
+    .news-ticker-container { margin-bottom: 15px; border-radius: 8px; }
+    .ticker-text { font-size: 13px; }
+    .news-ticker-container::before { padding: 0 10px; font-size: 12px; }
+}
+
 
 /* حاوية الأزرار في منتصف أسفل الشاشة */
 .social-contact {
@@ -131,6 +199,18 @@
     <button class="theme-switch" onclick="toggleTheme()"><span id="theme-icon">🌙 المظهر الليلي</span></button>
 
     <div class="container">
+          <!-- شريط الاخبار-->
+        <div class="news-ticker-container">
+    <div class="ticker-wrapper">
+        <div class="ticker-text">
+            <span>✨ خصم خاص 10% بمناسبة الافتتاح استخدم كود: <b>MK10</b></span>
+            <span>🎨 وصلت تشكيلة جديدة من الألوان الزيتية الاحترافية</span>
+            <span>🚚 خدمة التوصيل متاحة لجميع المحافظات</span>
+            <span>🖌️ ترقبوا ورش العمل الفنية قريباً في متجرنا</span>
+        </div>
+    </div>
+</div>
+
         <!-- قسم المنتجات -->
         <div class="card">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
