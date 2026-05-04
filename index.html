@@ -2,21 +2,11 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <!-- السطر الأهم للتجاوب مع الهاتف -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>متجر الفنان - الكاشير الشامل</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* حاوية الأزرار في منتصف أسفل الشاشة */
-.social-contact {
-    position: fixed;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    z-index: 4000;
-}
 /* حاوية الأزرار في منتصف أسفل الشاشة */
 .social-contact {
     position: fixed;
@@ -77,112 +67,61 @@
     }
 }
 
-.social-btn {
-    padding: 10px 20px;
-    border-radius: 50px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    animation: pulse-animation 2s infinite; /* تشغيل تأثير النبض */
-    transition: 0.3s;
-}
-
-/* ألوان الأزرار */
-.fb { background: #1877f2; animation-delay: 0s; }
-.wa { background: #25d366; animation-delay: 0.3s; } /* تأخير بسيط لعمل موجة تتابعية */
-.tg { background: #0088cc; animation-delay: 0.6s; }
-
-/* تعريف تأثير النبض */
-@keyframes pulse-animation {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
-    }
-    70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 12px rgba(0, 0, 0, 0);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
-/* إيقاف النبض عند وضع الماوس لسهولة الضغط */
-.social-btn:hover {
-    animation: none;
-    transform: scale(1.1) translateY(-5px);
-    filter: brightness(1.1);
-}
-
-@media (max-width: 500px) {
-    .social-btn span { display: none; }
-    .social-btn { padding: 12px; border-radius: 50%; }
-}
-
-
-/* إخفاء الأزرار عند الطباعة */
-@media print { .social-contact { display: none; } }
-/* لون تيك توك الأسود وتأخير النبض الخاص به */
-.tt { 
-    background: #010101; 
-    animation-delay: 0.9s; /* لضمان استمرار تأثير الموجة بعد تليجرام */
-}
-
-/* تحسين شكل الأزرار لكي لا تزحم الشاشة بعد زيادة عددها */
-@media (max-width: 600px) {
-    .social-contact {
-        gap: 8px; /* تقليل المسافات في الموبايل */
-        bottom: 15px;
-    }
-    .social-btn {
-        padding: 8px 12px;
-        font-size: 12px;
-    }
-}
-
-/* تصميم أزرار التواصل نهاية */
         :root { --bg-body: #f0f2f5; --bg-card: #ffffff; --text-main: #1e293b; --primary: #4f46e5; --accent: #10b981; --border: #e2e8f0; --shadow: rgba(0,0,0,0.1); }
         [data-theme="dark"] { --bg-body: #0f172a; --bg-card: #1e293b; --text-main: #f1f5f9; --primary: #818cf8; --accent: #34d399; --border: #334155; --shadow: rgba(0,0,0,0.4); }
         
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg-body); color: var(--text-main); margin: 0; padding: 20px; transition: 0.4s; }
-        #welcome-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, #4f46e5, #ec4899); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; z-index: 2000; transition: 0.8s; }
-        .theme-switch { position: fixed; top: 20px; left: 20px; background: var(--bg-card); border: 2px solid var(--primary); padding: 10px; border-radius: 50px; cursor: pointer; z-index: 100; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg-body); color: var(--text-main); margin: 0; padding: 10px; transition: 0.4s; overflow-x: hidden; }
+        #welcome-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, #4f46e5, #ec4899); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; z-index: 5000; transition: 0.8s; }
+        .theme-switch { position: fixed; top: 15px; left: 15px; background: var(--bg-card); border: 2px solid var(--primary); padding: 8px 15px; border-radius: 50px; cursor: pointer; z-index: 100; font-size: 12px; }
         
-        .container { max-width: 1100px; margin: 60px auto 0; display: grid; grid-template-columns: 2fr 1fr; gap: 25px; }
-        .card { background: var(--bg-card); padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px var(--shadow); border: 1px solid var(--border); }
+        /* تحسين الحاوية للموبايل */
+        .container { max-width: 1100px; margin: 60px auto 100px; display: grid; grid-template-columns: 2fr 1fr; gap: 20px; width: 100%; box-sizing: border-box; }
+        
+        .card { background: var(--bg-card); padding: 20px; border-radius: 20px; box-shadow: 0 10px 25px var(--shadow); border: 1px solid var(--border); height: fit-content; }
 
-        /* الأقسام */
-        .category-tabs { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 10px; }
-        .tab-btn { padding: 10px 20px; background: var(--bg-body); border: 1px solid var(--border); border-radius: 50px; cursor: pointer; color: var(--text-main); font-weight: bold; white-space: nowrap; }
+        .category-tabs { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding: 5px; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+        .tab-btn { padding: 8px 16px; background: var(--bg-body); border: 1px solid var(--border); border-radius: 50px; cursor: pointer; color: var(--text-main); font-weight: bold; font-size: 13px; }
         .tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
-        .product-card { background: var(--bg-body); padding: 15px; border-radius: 15px; text-align: center; cursor: pointer; transition: 0.3s; border: 1px solid var(--border); }
-        .product-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        /* شبكة المنتجات متجاوبة */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+        .product-card { background: var(--bg-body); padding: 12px; border-radius: 15px; text-align: center; cursor: pointer; transition: 0.2s; border: 1px solid var(--border); font-size: 14px; }
+        .product-card:hover { transform: translateY(-3px); border-color: var(--primary); }
 
-        .cart-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .cart-table th { background: var(--primary); color: white; padding: 12px; border-radius: 5px; text-align: right; }
-        .cart-table td { padding: 12px; border-bottom: 1px solid var(--border); }
+        .cart-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px; }
+        .cart-table th { background: var(--primary); color: white; padding: 10px; border-radius: 5px; text-align: right; }
+        .cart-table td { padding: 10px; border-bottom: 1px solid var(--border); }
         
-        /* طرق الدفع */
-        .payment-options { display: flex; gap: 10px; margin-top: 10px; margin-bottom: 15px; }
-        .pay-btn { flex: 1; padding: 12px; border: 2px solid var(--border); background: transparent; color: var(--text-main); border-radius: 12px; cursor: pointer; font-weight: bold; }
+        .payment-options { display: flex; gap: 8px; margin-top: 10px; }
+        .pay-btn { flex: 1; padding: 10px; border: 2px solid var(--border); background: transparent; color: var(--text-main); border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 13px; }
         .pay-btn.active { border-color: var(--accent); background: var(--accent); color: white; }
 
-        .action-btn { width: 100%; padding: 15px; margin-top: 10px; background: var(--primary); color: white; border: none; border-radius: 12px; font-size: 1.1rem; cursor: pointer; font-weight: bold; }
-        .input-field { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-body); color: var(--text-main); box-sizing: border-box; }
-        
-        #checkout-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:3000; justify-content:center; align-items:center; }
-        .modal-content { background: var(--bg-card); width:90%; max-width:400px; padding:25px; border-radius:20px; text-align:center; }
-        .bill-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+        .action-btn { width: 100%; padding: 14px; margin-top: 10px; background: var(--primary); color: white; border: none; border-radius: 12px; font-size: 1rem; cursor: pointer; font-weight: bold; }
+        .input-field { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-body); color: var(--text-main); box-sizing: border-box; margin-bottom: 10px; }
 
-        @media (max-width: 850px) { .container { grid-template-columns: 1fr; } }
+        /* أزرار التواصل - النسخة المحسنة للموبايل */
+        .social-contact { position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 4000; width: 95%; justify-content: center; }
+        .social-btn { padding: 10px 14px; border-radius: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 12px; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); animation: pulse 2s infinite; min-width: 75px; justify-content: center; }
+        
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        
+        .fb { background: #1877f2; } .wa { background: #25d366; } .tg { background: #0088cc; } .tt { background: #010101; }
+
+        /* تعديلات الموبايل (Media Queries) */
+        @media (max-width: 850px) {
+            .container { grid-template-columns: 1fr; margin-top: 70px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .social-btn span { display: inline; } /* التأكد من ظهور الاسم */
+        }
+
+        @media (max-width: 450px) {
+            .social-btn { padding: 8px; font-size: 10px; min-width: 65px; }
+            .product-card { padding: 10px; font-size: 12px; }
+            .action-btn { padding: 12px; font-size: 14px; }
+        }
+
+        #checkout-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:6000; justify-content:center; align-items:center; }
+        .modal-content { background: var(--bg-card); width:85%; max-width:350px; padding:20px; border-radius:20px; text-align:center; }
     </style>
 </head>
 <body data-theme="light">
@@ -191,10 +130,11 @@
     <button class="theme-switch" onclick="toggleTheme()"><span id="theme-icon">🌙 المظهر الليلي</span></button>
 
     <div class="container">
+        <!-- قسم المنتجات -->
         <div class="card">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                 <h3 style="margin: 0;">🎨 المنتجات</h3>
-                <button onclick="clearCart()" style="background: #ef4444; color: white; border: none; padding: 8px 15px; border-radius: 8px; cursor: pointer;">🗑️ مسح السلة</button>
+                <button onclick="clearCart()" style="background: #ef4444; color: white; border: none; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 12px;">🗑️ مسح</button>
             </div>
 
             <div class="category-tabs">
@@ -202,64 +142,65 @@
                 <button class="tab-btn" onclick="showCategory('paints', this)">الألوان</button>
                 <button class="tab-btn" onclick="showCategory('brushes', this)">الفرش</button>
                 <button class="tab-btn" onclick="showCategory('tools', this)">أدوات</button>
-                <button class="tab-btn" onclick="showCategory('mk', this)">خصومات</button>
             </div>
             
             <div class="product-grid">
-                <div class="product-card" data-cat="paints" onclick="addItem('ألوان زيتية', 250)">🖼️ ألوان زيتية<br><b>250 ج.م</b></div>
+                <div class="product-card" data-cat="paints" onclick="addItem('ألوان زيتية', 250)">🖼️ زيتية<br><b>250 ج.م</b></div>
                 <div class="product-card" data-cat="paints" onclick="addItem('ألوان أكريليك', 180)">🎨 أكريليك<br><b>180 ج.م</b></div>
                 <div class="product-card" data-cat="brushes" onclick="addItem('طقم فرش', 85)">🖌️ طقم فرش<br><b>85 ج.م</b></div>
-                <div class="product-card" data-cat="tools" onclick="addItem('حامل خشبي', 450)">🏗️ حامل لوحات<br><b>450 ج.م</b></div>
-                <div class="product-card" data-cat="mk" onclick="addItem('خصم', 450)">🏗️ خصم<br><b>450 ج.م</b></div>
-                <div class="product-card" data-cat="mk" onclick="addItem('خصم2', 350)">🏗️ خصم 2<br><b>350 ج.م</b></div>
-                <div class="product-card" data-cat="mk" onclick="addItem('خصم3', 150)">🏗️ خصم 3<br><b>250 ج.م</b></div>
+                <div class="product-card" data-cat="tools" onclick="addItem('حامل خشبي', 450)">🏗️ حامل<br><b>450 ج.م</b></div>
             </div>
 
             <table class="cart-table">
-                <thead><tr><th>الصنف</th><th>السعر</th><th>حذف</th></tr></thead>
+                <thead><tr><th>الصنف</th><th>السعر</th><th></th></tr></thead>
                 <tbody id="cart-items"></tbody>
             </table>
         </div>
 
+        <!-- ملخص الحساب -->
         <div class="card">
-            <h3 style="margin: 0;">🧾 تفاصيل الحساب</h3>
+            <h3 style="margin: 0;">🧾 الحساب</h3>
             <div style="margin: 15px 0; border-bottom: 1px dashed var(--border); padding-bottom: 10px;">
-                <div class="bill-row"><span>المجموع:</span> <span id="sub-total">0</span> ج.م</div>
-                <div class="bill-row"><span>الشحن الثابت:</span> <span>50</span> ج.م</div>
-                <div class="bill-row" id="discount-row" style="display:none; color: var(--accent); font-weight: bold;">
-                    <span>الخصم:</span> <span id="discount-val">0</span>
-                </div>
+                <div style="display:flex; justify-content:space-between"><span>المجموع:</span> <span id="sub-total">0</span></div>
+                <div style="display:flex; justify-content:space-between"><span>الشحن:</span> <span>50</span></div>
+                <div id="discount-row" style="display:none; color:var(--accent); justify-content:space-between"><span>خصم MK10:</span> <span id="discount-val">0</span></div>
             </div>
-            <div style="font-size: 1.8rem; text-align: center; color: var(--primary); font-weight: bold; margin-bottom: 15px;">
+            <div style="font-size: 1.5rem; text-align: center; color: var(--primary); font-weight: bold;">
                 <span id="total-amount">50</span> ج.م
             </div>
 
-            <label>كوبون خصم:</label>
-            <div style="display: flex; gap: 5px; margin-top: 5px; margin-bottom: 15px;">
-                <input type="text" id="coupon-code" class="input-field" placeholder="ادخل كود الخصم هنا">
-                <button onclick="applyCoupon()" style="background: var(--primary); color: white; border: none; padding: 0 15px; border-radius: 8px; cursor: pointer;">تطبيق</button>
+            <div style="display: flex; gap: 5px; margin: 15px 0;">
+                <input type="text" id="coupon-code" class="input-field" placeholder="كود الخصم" style="margin:0">
+                <button onclick="applyCoupon()" style="background:var(--primary); color:white; border:none; border-radius:8px; padding:0 10px;">تطبيق</button>
             </div>
 
-            <label>طريقة الدفع:</label>
             <div class="payment-options">
                 <button class="pay-btn active" id="btn-cash" onclick="setPay('عند الاستلام')">🏠 كاش</button>
                 <button class="pay-btn" id="btn-vf" onclick="setPay('فودافون كاش')">📱 فودافون</button>
             </div>
-            <div id="vf-details" style="display:none; padding:10px; background:rgba(255,0,0,0.1); border-radius:10px; margin-bottom:15px; text-align:center;">
-                <small style="color:#ef4444">حول للرقم: <b>01096378895</b></small>
+            <div id="vf-details" style="display:none; color:#ef4444; text-align:center; font-size:12px; margin-bottom:10px;">
+                حول للرقم: <b>01096378895</b>
             </div>
 
-            <button class="action-btn" onclick="openCheckout()" style="background:var(--accent);">✅ إتمام الطلب (واتساب)</button>
+            <button class="action-btn" onclick="openCheckout()" style="background:var(--accent);">✅ إتمام الطلب</button>
         </div>
+    </div>
+
+    <!-- أزرار التواصل -->
+    <div class="social-contact">
+        <a href="https://facebook.com" target="_blank" class="social-btn fb"><span>فيسبوك</span></a>
+        <a href="https://wa.me" target="_blank" class="social-btn wa"><span>واتساب</span></a>
+        <a href="https://t.me" target="_blank" class="social-btn tg"><span>تليجرام</span></a>
+        <a href="https://tiktok.com" target="_blank" class="social-btn tt"><span>تيك توك</span></a>
     </div>
 
     <div id="checkout-modal">
         <div class="modal-content">
-            <h3>📝 تأكيد الطلب</h3>
-            <input type="text" id="cust-name" class="input-field" placeholder="الاسم بالكامل" style="margin-bottom:10px;">
-            <input type="tel" id="cust-phone" class="input-field" placeholder="رقم الهاتف" style="margin-bottom:20px;">
+            <h3>📝 بيانات التوصيل</h3>
+            <input type="text" id="cust-name" class="input-field" placeholder="الاسم">
+            <input type="tel" id="cust-phone" class="input-field" placeholder="رقم الهاتف">
             <div style="display:flex; gap:10px;">
-                <button class="action-btn" onclick="confirmAndSend()" style="background:var(--accent)">تأكيد</button>
+                <button class="action-btn" onclick="confirmAndSend()" style="background:var(--accent)">إرسال</button>
                 <button class="action-btn" onclick="closeCheckout()" style="background:#ef4444">إلغاء</button>
             </div>
         </div>
@@ -283,19 +224,19 @@
             document.getElementById('theme-icon').innerHTML = isDark ? '🌙 المظهر الليلي' : '☀️ المظهر النهاري';
         }
 
-        let cart = []; let method = 'عند الاستلام'; let discount = 0; const shipping = 50; let currentPercent = 0;
+        let cart = []; let method = 'عند الاستلام'; let discount = 0; const shipping = 50;
 
         function addItem(n, p) { cart.push({name:n, price:p}); render(); }
         function removeItem(i) { cart.splice(i, 1); if(cart.length === 0) discount = 0; render(); }
-        function clearCart() { if(confirm("تفريغ السلة؟")) { cart = []; discount = 0; render(); } }
+        function clearCart() { cart = []; discount = 0; render(); }
 
-            // --- تعديل الخصم من هنا ---
+        // --- تعديل الخصم من هنا ---
         function applyCoupon() {
             const code = document.getElementById('coupon-code').value.trim().toUpperCase();
             let sub = 0; cart.forEach(i => sub += i.price);
             if(sub === 0) return alert("السلة فارغة!");
 
-            if(code === "MK10") {
+            if(code === "50") {
                 const percent = 50; // ← غير هذا الرقم لتغيير نسبة الخصم (مثلاً 15 أو 20)
                 currentPercent = percent;
                 discount = sub * (percent / 100);
@@ -309,7 +250,6 @@
         function render() {
             const list = document.getElementById('cart-items'); list.innerHTML = ''; let sub = 0;
             cart.forEach((item, i) => { sub += item.price; list.innerHTML += `<tr><td>${item.name}</td><td>${item.price}</td><td><button onclick="removeItem(${i})" style="border:none; background:none; cursor:pointer;">🗑️</button></td></tr>`; });
-            if(sub === 0) { document.getElementById('discount-row').style.display = 'none'; discount = 0; }
             document.getElementById('sub-total').innerText = sub;
             document.getElementById('total-amount').innerText = (sub + shipping - discount).toFixed(0);
         }
@@ -327,26 +267,17 @@
         function confirmAndSend() {
             const name = document.getElementById('cust-name').value;
             const phone = document.getElementById('cust-phone').value;
-            const now = new Date();
-            const time = now.toLocaleTimeString('ar-EG') + " - " + now.toLocaleDateString('ar-EG');
             if(!name || !phone) return alert("أدخل البيانات");
 
-            let msg = `*طلب جديد - متجر الفنان*%0A*الوقت:* ${time}%0A*
-            العميل:* ${name}%0A*
-            الهاتف:* ${phone}%0A*
-            الدفع:* ${method}%0A%0A*الأصناف:*%0A`;
+            let msg = `*طلب جديد - متجر الفنان*%0A*العميل:* ${name}%0A*الهاتف:* ${phone}%0A*الدفع:* ${method}%0A%0A*الأصناف:*%0A`;
             cart.forEach(i => msg += `- ${i.name} (${i.price} ج.م)%0A`);
-            msg += `%0A*المجموع:* ${document.getElementById('sub-total').innerText} ج.م`;
-            msg += `%0A*الشحن:* 50 ج.م`;
-            if(discount > 0) msg += `%0A*الخصم:* -${discount.toFixed(0)} ج.م (${currentPercent}%)`;
-            msg += `%0A*الإجمالي النهائي:* ${document.getElementById('total-amount').innerText} ج.م`;
-
-            if(method === 'فودافون كاش') msg += `%0A%0A⚠️ *يرجى إرسال سكرين شوت للتحويل الآن.*`;
+            msg += `%0A*الإجمالي:* ${document.getElementById('total-amount').innerText} ج.م`;
 
             window.open(`https://wa.me/201096378895?text=${msg}`, '_blank');
             closeCheckout(); cart = []; discount = 0; render();
         }
     </script>
+
 <!-- حاوية أزرار التواصل -->
 <div class="social-contact">
     <a href="https://facebook.com/ahmedhamed818" target="_blank" class="social-btn fb" title="فيسبوك">
@@ -363,6 +294,5 @@
         <span>تيك توك</span>
     </a>
 </div>
-
 </body>
 </html>
