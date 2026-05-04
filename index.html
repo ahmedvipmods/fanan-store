@@ -7,16 +7,7 @@
     <title>مستر كيان- الكاشير الشامل</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* كود وظيفة النسخ الرقم */
-function copyNumber() {
-    const number = document.getElementById('number-to-copy').innerText;
-    navigator.clipboard.writeText(number).then(() => {
-        alert("✅ تم نسخ الرقم بنجاح: " + number);
-    }).catch(err => {
-        alert("❌ فشل النسخ، يرجى نسخه يدوياً");
-    });
-}
-/* كود وظيفة النسخ الرقم */
+
 /* حاوية الأزرار في منتصف أسفل الشاشة */
 .social-contact {
     position: fixed;
@@ -295,6 +286,16 @@ function copyNumber() {
             window.open(`https://wa.me/201096378895?text=${msg}`, '_blank');
             closeCheckout(); cart = []; discount = 0; render();
         }
+                /* كود وظيفة النسخ الرقم */
+function copyNumber() {
+    const number = document.getElementById('number-to-copy').innerText;
+    navigator.clipboard.writeText(number).then(() => {
+        alert("✅ تم نسخ الرقم بنجاح: " + number);
+    }).catch(err => {
+        alert("❌ فشل النسخ، يرجى نسخه يدوياً");
+    });
+}
+/* كود وظيفة النسخ الرقم */
     </script>
 
 <!-- حاوية أزرار التواصل -->
