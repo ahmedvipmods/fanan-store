@@ -92,6 +92,25 @@
 }
 
 .social-btn {
+    display: flex;
+    align-items: center; /* توسيط الأيقونة والنص عمودياً */
+    justify-content: center;
+    gap: 10px; /* مسافة بين الأيقونة والنص */
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+/* تكبير الأيقونة قليلاً */
+.social-btn i {
+    font-size: 18px;
+}
+
+    
     padding: 12px 18px; /* تكبير مساحة الضغط */
     border-radius: 12px;
     color: white;
@@ -381,19 +400,19 @@ function copyNumber() {
 
 <!-- حاوية أزرار التواصل -->
 <div class="social-contact">
-    <a href="https://facebook.com/ahmedhamed818" target="_blank" class="social-btn fb" title="فيسبوك">
-        <span>فيسبوك</span>
+    <a href="https://facebook.com/ahmedhamed818" target="_blank" class="social-btn fb">
+        <i class="fab fa-facebook-f"></i> <span>فيسبوك</span>
     </a>
-    <a href="https://wa.me/201096378895" target="_blank" class="social-btn wa" title="واتساب">
-        <span>واتساب</span>
+    <a href="https://wa.me/201096378895" target="_blank" class="social-btn wa">
+        <i class="fab fa-whatsapp"></i> <span>واتساب</span>
     </a>
-    <a href="https://t.me/mr_kiyan" target="_blank" class="social-btn tg" title="تليجرام">
-        <span>تليجرام</span>
-</a>
-<!-- زر تيك توك الجديد -->
+    <a href="https://t.me/mr_kiyan" target="_blank" class="social-btn tg">
+        <i class="fab fa-telegram-plane"></i> <span>تليجرام</span>
+    </a>
     <a href="https://tiktok.com/@a.h.m.e.d.818" target="_blank" class="social-btn tt">
-        <span>تيك توك</span>
+        <i class="fab fa-tiktok"></i> <span>تيك توك</span>
     </a>
 </div>
+
 </body>
 </html>
