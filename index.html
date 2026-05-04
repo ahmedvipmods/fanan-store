@@ -163,14 +163,14 @@
             <div style="margin: 15px 0; border-bottom: 1px dashed var(--border); padding-bottom: 10px;">
                 <div style="display:flex; justify-content:space-between"><span>المجموع:</span> <span id="sub-total">0</span></div>
                 <div style="display:flex; justify-content:space-between"><span>الشحن:</span> <span>50</span></div>
-                <div id="discount-row" style="display:none; color:var(--accent); justify-content:space-between"><span>خصم MK10:</span> <span id="discount-val">0</span></div>
+                <div id="discount-row" style="display:none; color:var(--accent); justify-content:space-between"><span>الخصم:</span> <span id="discount-val">0</span></div>
             </div>
             <div style="font-size: 1.5rem; text-align: center; color: var(--primary); font-weight: bold;">
                 <span id="total-amount">50</span> ج.م
             </div>
 
             <div style="display: flex; gap: 5px; margin: 15px 0;">
-                <input type="text" id="coupon-code" class="input-field" placeholder="كود الخصم" style="margin:0">
+                <input type="text" id="coupon-code" class="input-field" placeholder="اكتب كود الخصم هنا" style="margin:0">
                 <button onclick="applyCoupon()" style="background:var(--primary); color:white; border:none; border-radius:8px; padding:0 10px;">تطبيق</button>
             </div>
 
@@ -178,9 +178,18 @@
                 <button class="pay-btn active" id="btn-cash" onclick="setPay('عند الاستلام')">كاش 🏠</button>
                 <button class="pay-btn" id="btn-vf" onclick="setPay('فودافون كاش')">فودافون كاش 📱</button>
             </div>
-            <div id="vf-details" style="display:none; color:#ef4444; text-align:center; font-size:12px; margin-bottom:10px;">
-                حول للرقم: <b>01096378895</b>
-            </div>
+            <div id="vf-details" style="display:none; margin-top: 15px; padding: 15px; background: rgba(239, 68, 68, 0.1); border: 1px dashed #ef4444; border-radius: 12px; text-align: center;">
+    <p style="color: #ef4444; font-size: 13px; font-weight: bold; margin: 0 0 10px 0;">يرجى تحويل المبلغ للرقم التالي:</p>
+    
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--bg-card); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
+        <span id="number-to-copy" style="font-size: 16px; font-weight: bold; letter-spacing: 1px;">01096378895</span>
+        <button onclick="copyNumber()" style="background: var(--primary); color: white; border: none; padding: 5px 10px; border-radius: 6px; cursor: pointer; font-size: 11px; font-family: 'Tajawal';">نسخ الرقم 📋</button>
+    </div>
+    
+    <p style="font-size: 11px; margin-top: 10px; opacity: 0.8;">بعد التحويل، اطلب واتساب وأرسل صورة العملية.</p>
+</div>
+
+
 
             <button class="action-btn" onclick="openCheckout()" style="background:var(--accent);">✅ اتمام الطلب ✅</button>
         </div>
