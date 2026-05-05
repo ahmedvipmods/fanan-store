@@ -430,6 +430,22 @@ function copyNumber() {
 /* كود وظيفة النسخ الرقم */
     </script>
 
+    <!-- تعطيل زر الفأرة الأيمن -->
+<script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+<!-- تعطيل زر الفأرة الأيمن -->
+
+<!-- منع اختصارات لوحة المفاتيح -->
+<script>
+document.onkeydown = function(e) {
+  if (e.keyCode == 123) return false; // منع F12
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false; // منع Ctrl+Shift+I
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false; // منع Ctrl+U
+};
+</script>
+<!-- منع اختصارات لوحة المفاتيح -->
+
 <!-- حاوية أزرار التواصل -->
 <div class="social-contact">
     <a href="https://facebook.com/ahmedhamed818" target="_blank" class="social-btn fb">
